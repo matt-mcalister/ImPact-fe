@@ -4,7 +4,7 @@ import {
   Route,
 } from 'react-router-dom';
 
-import SignUpPage from './sessions/SignUp';
+import SignUpPage from './sessions/SignUpPage';
 import SignInPage from './sessions/SignIn';
 import PasswordForgetPage from './sessions/PasswordForget';
 
