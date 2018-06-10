@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 
 import SignUpPage from './sessions/SignUpPage';
-import SignInPage from './sessions/SignIn';
+import SignInPage from './sessions/SignInPage';
 import PasswordForgetPage from './sessions/PasswordForget';
 
 import Navigation from './Navigation';
