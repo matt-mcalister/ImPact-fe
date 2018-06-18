@@ -6,7 +6,6 @@ import {
 
 import SignUpPage from './sessions/SignUpPage';
 import SignInPage from './sessions/SignInPage';
-import PasswordForgetPage from './sessions/PasswordForget';
 
 import Navigation from './Navigation';
 import HomePage from './Home';
@@ -14,7 +13,7 @@ import LandingPage from './Landing';
 import AccountPage from './Account';
 
 import * as routes from '../constants/routes';
-import withAuthentication from './withAuthentication';
+import AppProvider from './context/AppProvider';
 
 const App = () => {
   return (
@@ -22,7 +21,7 @@ const App = () => {
     <div>
       <Navigation  />
 
-      <hr/>
+      <hr />
 
       <Route
         exact path={routes.LANDING}
@@ -37,10 +36,6 @@ const App = () => {
         component={() => <SignInPage />}
       />
       <Route
-        exact path={routes.PASSWORD_FORGET}
-        component={() => <PasswordForgetPage />}
-      />
-      <Route
         exact path={routes.HOME}
         component={() => <HomePage />}
       />
@@ -52,4 +47,4 @@ const App = () => {
   </Router>
   )
 }
-export default withAuthentication(App);
+export default AppProvider(App);

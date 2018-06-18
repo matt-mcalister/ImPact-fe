@@ -1,0 +1,23 @@
+.avatar {
+  background-color: #D4E8FF;
+}
+
+.participantAvatar {
+  width: 20em;
+  height: 20em;
+  border-radius: 50%;
+  border-left: 33%;
+  border-right: 33%;
+}
+
+.avatarContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 80%;
+  border: 1px solid red;
+}
+
+.avatarChoice {
+  border: 1px solid blue;
+  width: 100%;
+}
