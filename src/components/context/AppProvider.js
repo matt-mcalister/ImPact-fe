@@ -28,26 +28,20 @@ const AppProvider = (Component) =>
     }
 
     setParticipant = (authUser) => {
-      // const participant = firebase.db.collection('participant').doc(authUser.uid)
-      // debugger
+      const participant = firebase.db.collection('participant').doc(authUser.uid)
 
-      this.setState(() => ({ data: {...this.state.data, authUser: authUser} }))
+      this.setState(() => ({ data: {...this.state.data, authUser: authUser, participant: participant} }))
     }
 
     componentDidMount() {
       firebase.auth.onAuthStateChanged(authUser => {
         authUser
           ? this.setParticipant(authUser)
-          : this.setState(() => ({ data: {...this.state.data, authUser: null} }));
+          : this.setState(() => ({ data: {...this.state.data, authUser: null, participant: null} }));
       });
     }
 
     render() {
-      // const { authUser } = this.state;
-      // if (authUser){
-      //   firebase.db.collection("participant").doc(this.state.authUser.uid).get()
-      //     .then((doc) => console.log(doc.data()))
-      // }
 
       return (
         <AppContext.Provider value={this.state}>

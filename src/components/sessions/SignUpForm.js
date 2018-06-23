@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import * as routes from '../../constants/routes';
 
 
 import { auth, firebase } from '../../firebase';
@@ -106,4 +104,4 @@ class SignUpForm extends Component {
   }
 }
 
-export default withRouter(SignUpForm);
+export default SignUpForm;

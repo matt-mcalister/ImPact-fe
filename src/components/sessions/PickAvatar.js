@@ -37,7 +37,7 @@ class PickAvatar extends React.Component {
         <h1>Set a Profile Image or Select an Avatar!</h1>
         <button onClick={this.onSave}>Save Avatar Image</button>
         <div className="avatarContainer">
-          {this.state.avatars.map(a => <img onClick={(e) => this.setAvatar(a)} key={a} className="avatar avatarChoice" src={a} />)}
+          {this.state.avatars.map((a,i) => <img onClick={(e) => this.setAvatar(a)} key={i} className="avatar avatarChoice" src={a} />)}
         </div>
       </div>
 
