@@ -9,10 +9,9 @@ import AppConsumer from '../context/AppConsumer';
 const SignUpPage = (props) => {
   return (<div>
     <h1>SignUp</h1>
-    { props.context.data.authUser ?
-      <PickAvatar /> :
+
       <SignUpForm />
-    }
+    
   </div>)
 }
 

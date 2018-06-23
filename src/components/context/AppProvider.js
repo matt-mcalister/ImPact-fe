@@ -15,18 +15,29 @@ const AppProvider = (Component) =>
         },
         set: {
           participant: this.setParticipant
+        },
+        newUserForm: {
+          name: "",
+          updateName: this.updateNewUserName
         }
       };
     }
 
-    setParticipant = () => {
-      debugger
+    updateNewUserName = (event) => {
+      this.setState({newUserForm: { ...this.state.newUserForm, name: event.target.value }})
+    }
+
+    setParticipant = (authUser) => {
+      // const participant = firebase.db.collection('participant').doc(authUser.uid)
+      // debugger
+
+      this.setState(() => ({ data: {...this.state.data, authUser: authUser} }))
     }
 
     componentDidMount() {
       firebase.auth.onAuthStateChanged(authUser => {
         authUser
-          ? this.setState(() => ({ data: {...this.state.data, authUser: authUser} }))
+          ? this.setParticipant(authUser)
           : this.setState(() => ({ data: {...this.state.data, authUser: null} }));
       });
     }

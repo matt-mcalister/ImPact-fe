@@ -3,10 +3,10 @@ import { withRouter } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 
 
-import { auth } from '../../firebase';
+import { auth, firebase } from '../../firebase';
 
 const INITIAL_STATE = {
-  username: '',
+  name: '',
   email: '',
   passwordOne: '',
   passwordTwo: '',
@@ -24,27 +24,40 @@ class SignUpForm extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
+  resetState = () => {
+    console.log("Document successfully written!");
+    this.setState(() => ({ ...INITIAL_STATE }));
+  }
+
+  updateError = (error) => {
+    console.error("Error writing document: ", error);
+    this.setState(byPropKey('error', error))
+  }
+
+  createParticipant = (authUser) => {
+      firebase.db.collection('participant').doc(authUser.user.uid).set({
+        id: authUser.user.uid,
+        name: this.state.name
+      }).catch(this.updateError)
+  }
+
   onSubmit = (event) => {
     event.preventDefault()
     const {
-      username,
+      name,
       email,
       passwordOne,
     } = this.state;
 
     auth.doCreateUserWithEmailAndPassword(email, passwordOne)
-      .then(authUser => {
-        this.setState(() => ({ ...INITIAL_STATE }));
-      })
-      .catch(error => {
-        this.setState(byPropKey('error', error));
-      });
+      .then(this.createParticipant)
+      .catch(this.updateError);
 
   }
 
   render() {
     const {
-    username,
+    name,
     email,
     passwordOne,
     passwordTwo,
@@ -55,13 +68,13 @@ class SignUpForm extends Component {
   passwordOne !== passwordTwo ||
   passwordOne === '' ||
   email === '' ||
-  username === '');
+  name === '');
 
   return (
     <form onSubmit={this.onSubmit}>
       <input
-        value={username}
-        onChange={event => this.setState(byPropKey('username', event.target.value))}
+        value={name}
+        onChange={event => this.setState(byPropKey('name', event.target.value))}
         type="text"
         placeholder="Full Name"
       />
