@@ -1,5 +1,7 @@
 import React from 'react';
 
+import withAuthorization from './withAuthorization'
+
 const Home= () => {
   return (
     <div>
@@ -8,4 +10,4 @@ const Home= () => {
   )
 }
 
-export default Home;
+export default withAuthorization(Home);
