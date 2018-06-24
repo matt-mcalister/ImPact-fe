@@ -10,7 +10,8 @@ const withAuthorization = (Component) => {
     componentDidMount(){
       firebase.auth.onAuthStateChanged(authUser => {
         if (!authUser) {
-          this.props.history.push(routes.SIGN_IN)
+          console.log("no auth user")
+          this.props.history.push(routes.LANDING)
         }
       })
     }

@@ -20,6 +20,7 @@ const AppProvider = (Component) =>
     }
 
     checkForParticipant = () => {
+
       firebase.db.collection('participant').doc(this.state.data.authUser.uid).get()
         .then(this.setParticipant)
     }

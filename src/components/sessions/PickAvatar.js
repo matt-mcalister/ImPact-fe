@@ -22,10 +22,12 @@ class PickAvatar extends React.Component {
       });
   }
 
-  onSave = () => {
-    firebase.db.collection('participant').doc(this.props.context.data.participant.id).update({
+  onSave = async () => {
+    await firebase.db.collection('participant').doc(this.props.context.data.participant.id).update({
       image: this.state.selectedAvatarImg
-    }).then(this.props.context.set.participant)
+    })
+    console.log("updated participant")
+    this.props.context.set.participant()
   }
 
   setAvatar = (a) => {
@@ -34,7 +36,7 @@ class PickAvatar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="everyMainBody">
         <img className="avatar participantAvatar" src={this.state.selectedAvatarImg} />
         <h1>Set a Profile Image or Select an Avatar!</h1>
         <button onClick={this.onSave}>Save Avatar Image</button>

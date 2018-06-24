@@ -6,6 +6,7 @@ import SignOutButton from './sessions/SignOutButton';
 import * as routes from '../constants/routes';
 
 const Navigation = (props) => {
+  console.log("nav props: ", props)
   return (props.context.data.authUser
       ? <NavigationAuth />
       : <NavigationNonAuth />)
@@ -13,16 +14,21 @@ const Navigation = (props) => {
 }
 
 const NavigationAuth = () => {
-  return (<ul>
-    <li><Link to={routes.HOME}>Home</Link></li>
-    <li><Link to={routes.ACCOUNT}>Account</Link></li>
-    <li><SignOutButton /></li>
-  </ul>)
+  return (<div id="NavBar">
+    <h1 className="title">imPact</h1>
+    <div id="navLinks">
+      <Link to={routes.HOME}>Home</Link>
+      <Link to={routes.ACCOUNT}>Account</Link>
+      <SignOutButton />
+    </div>
+  </div>)
 }
 const NavigationNonAuth = () => {
-  return (<ul>
-    <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
-    <li><Link to={routes.SIGN_UP}>Sign Up</Link></li>
-  </ul>)
+  return (<div id="NavBar">
+    <h1 className="title">imPact</h1>
+    <div id="aboutContent">
+      Make a commitment. Make an imPact.
+    </div>
+  </div>)
 }
 export default AppConsumer(Navigation);

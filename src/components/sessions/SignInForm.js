@@ -37,7 +37,7 @@ class SignInForm extends Component {
 
     auth.doSignInWithEmailAndPassword(email, password)
       .then(() => {
-        this.props.context.data.set.participant();
+        console.log("should be rerouting")
         history.push(routes.HOME);
       })
       .catch(error => {
@@ -57,19 +57,19 @@ class SignInForm extends Component {
       email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} id="signInForm">
         <input
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
           type="text"
           placeholder="Email Address"
-        />
+        /><br/>
         <input
           value={password}
           onChange={event => this.setState(byPropKey('password', event.target.value))}
           type="password"
           placeholder="Password"
-        />
+        /><br/>
         <button disabled={isInvalid} type="submit">
           Sign In
         </button>

@@ -9,10 +9,19 @@ import SignInPage from './sessions/SignInPage';
 
 import Navigation from './Navigation';
 import HomePage from './Home';
+import LandingPage from './Landing';
 import AccountPage from './Account';
 
 import * as routes from '../constants/routes';
 import AppProvider from './context/AppProvider';
+
+const pageStyling = {
+  position: "fixed",
+  height:"88%",
+  width:"100%",
+  backgroundColor: "#0644a8",
+  color: "white"
+}
 
 const App = () => {
   return (
@@ -20,27 +29,25 @@ const App = () => {
     <div>
       <Navigation  />
 
-      <hr />
-
       <Route
         exact path={routes.LANDING}
-        component={() => <HomePage />}
+        component={() => <LandingPage style={pageStyling} />}
       />
       <Route
         exact path={routes.SIGN_UP}
-        component={() => <SignUpPage />}
+        component={() => <SignUpPage style={pageStyling} />}
       />
       <Route
         exact path={routes.SIGN_IN}
-        component={() => <SignInPage />}
+        component={() => <SignInPage style={pageStyling} />}
       />
       <Route
         exact path={routes.HOME}
-        component={() => <HomePage />}
+        component={() => <HomePage style={pageStyling} />}
       />
       <Route
         exact path={routes.ACCOUNT}
-        component={() => <AccountPage />}
+        component={() => <AccountPage style={pageStyling} />}
       />
     </div>
   </Router>

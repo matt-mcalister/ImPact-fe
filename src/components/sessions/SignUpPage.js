@@ -10,7 +10,7 @@ import AppConsumer from '../context/AppConsumer';
 
 const SignUpPage = (props) => {
   return (<div>
-    <h1>SignUp</h1>
+    <h1>Sig nUp</h1>
     { props.context.data.participant ?
       props.context.data.participant.image ? props.history.push(routes.HOME) : <PickAvatar /> :
       <SignUpForm />

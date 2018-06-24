@@ -4,7 +4,7 @@ import withAuthorization from './withAuthorization'
 
 const Home= () => {
   return (
-    <div>
+    <div className="everyMainBody">
       <h1>Home</h1>
     </div>
   )
