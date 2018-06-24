@@ -41,7 +41,6 @@ class SignUpForm extends Component {
   onSubmit = (event) => {
     event.preventDefault()
     const {
-      name,
       email,
       passwordOne,
     } = this.state;

@@ -9,7 +9,6 @@ import SignInPage from './sessions/SignInPage';
 
 import Navigation from './Navigation';
 import HomePage from './Home';
-import LandingPage from './Landing';
 import AccountPage from './Account';
 
 import * as routes from '../constants/routes';
@@ -25,7 +24,7 @@ const App = () => {
 
       <Route
         exact path={routes.LANDING}
-        component={() => <LandingPage />}
+        component={() => <HomePage />}
       />
       <Route
         exact path={routes.SIGN_UP}
