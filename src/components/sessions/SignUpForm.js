@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-
-
 import { auth, firebase } from '../../firebase';
+import AppConsumer from '../context/AppConsumer'
 
 const INITIAL_STATE = {
   name: '',
@@ -36,7 +35,7 @@ class SignUpForm extends Component {
       firebase.db.collection('participant').doc(authUser.user.uid).set({
         id: authUser.user.uid,
         name: this.state.name
-      }).catch(this.updateError)
+      }).then(this.props.context.set.participant).catch(this.updateError)
   }
 
   onSubmit = (event) => {
@@ -104,4 +103,4 @@ class SignUpForm extends Component {
   }
 }
 
-export default SignUpForm;
+export default AppConsumer(SignUpForm);

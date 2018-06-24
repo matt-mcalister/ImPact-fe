@@ -12,7 +12,7 @@ const SignUpPage = (props) => {
   return (<div>
     <h1>SignUp</h1>
     { props.context.data.participant ?
-      props.context.data.participant.avatar ? props.history.push(routes.HOME) : <PickAvatar /> :
+      props.context.data.participant.image ? props.history.push(routes.HOME) : <PickAvatar /> :
       <SignUpForm />
     }
   </div>)

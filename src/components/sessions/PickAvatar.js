@@ -23,7 +23,9 @@ class PickAvatar extends React.Component {
   }
 
   onSave = () => {
-    debugger
+    firebase.db.collection('participant').doc(this.props.context.data.participant.id).update({
+      image: this.state.selectedAvatarImg
+    }).then(this.props.context.set.participant)
   }
 
   setAvatar = (a) => {

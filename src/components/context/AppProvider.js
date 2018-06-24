@@ -14,29 +14,34 @@ const AppProvider = (Component) =>
           participant: null
         },
         set: {
-          participant: this.setParticipant
-        },
-        newUserForm: {
-          name: "",
-          updateName: this.updateNewUserName
+          participant: this.checkForParticipant
         }
       };
     }
 
-    updateNewUserName = (event) => {
-      this.setState({newUserForm: { ...this.state.newUserForm, name: event.target.value }})
+    checkForParticipant = () => {
+      firebase.db.collection('participant').doc(this.state.data.authUser.uid).get()
+        .then(this.setParticipant)
     }
 
-    setParticipant = (authUser) => {
-      const participant = firebase.db.collection('participant').doc(authUser.uid)
+    setAuthUser = (authUser) => {
+      this.setState(() => ({ data: {...this.state.data, authUser: authUser } }),
+      this.checkForParticipant
+     )
+    }
 
-      this.setState(() => ({ data: {...this.state.data, authUser: authUser, participant: participant} }))
+    setParticipant = (doc) => {
+      if (doc.data()){
+        this.setState({ data: {...this.state.data, participant: doc.data() } })
+      } else {
+        console.log("doc.data() false", doc.data())
+      }
     }
 
     componentDidMount() {
       firebase.auth.onAuthStateChanged(authUser => {
         authUser
-          ? this.setParticipant(authUser)
+          ? this.setAuthUser(authUser)
           : this.setState(() => ({ data: {...this.state.data, authUser: null, participant: null} }));
       });
     }

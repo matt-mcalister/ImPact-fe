@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
+import AppConsumer from "../context/AppConsumer"
+
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
 
@@ -35,7 +37,7 @@ class SignInForm extends Component {
 
     auth.doSignInWithEmailAndPassword(email, password)
       .then(() => {
-        this.setState(() => ({ ...INITIAL_STATE }));
+        this.props.context.data.set.participant();
         history.push(routes.HOME);
       })
       .catch(error => {
@@ -78,4 +80,4 @@ class SignInForm extends Component {
   }
 }
 
-export default withRouter(SignInForm);
+export default AppConsumer(withRouter(SignInForm));
