@@ -1,5 +1,5 @@
 import React from "react";
-import { firebase } from '../../firebase';
+import { firebase, auth } from '../../firebase';
 import AppConsumer from '../context/AppConsumer';
 
 
@@ -23,11 +23,18 @@ class PickAvatar extends React.Component {
   }
 
   onSave = async () => {
-    await firebase.db.collection('participant').doc(this.props.context.data.participant.id).update({
-      image: this.state.selectedAvatarImg
-    })
-    console.log("updated participant")
-    this.props.context.set.participant()
+    // await firebase.db.collection('participant').doc(this.props.context.data.participant.id).update({
+    //   image: this.state.selectedAvatarImg
+    // })
+    // console.log("updated participant")
+    // this.props.context.set.participant()
+    this.props.context.set.selectedAvatarImg(this.state.selectedAvatarImg)
+    if (this.props.context.data.participant){
+      console.log("update participant")
+    } else {
+      this.props.context.set.createAuthUserAndParticipant()
+    }
+    //   .then(this.createParticipant)
   }
 
   setAvatar = (a) => {

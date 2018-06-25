@@ -1,8 +1,12 @@
 import React from 'react';
 import SignUpForm from './sessions/SignUpForm'
 import SignInForm from './sessions/SignInForm'
+import { withRouter } from 'react-router-dom';
+import * as routes from '../constants/routes';
+import PickAvatar from './sessions/PickAvatar'
+import AppConsumer from './context/AppConsumer';
 
-const Landing = () => {
+const DefaultLanding = () => {
   return (
       <div id="landingPageBody" className="everyMainBody">
         <div />
@@ -22,4 +26,12 @@ const Landing = () => {
   )
 }
 
-export default Landing;
+const Landing = (props) => {
+  if (props.context.newUserInfo.name) {
+    return <PickAvatar />
+  } else {
+    return <DefaultLanding />
+  }
+}
+
+export default AppConsumer(Landing);

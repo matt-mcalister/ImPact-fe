@@ -45,14 +45,11 @@ class SignUpForm extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    const {
-      email,
-      passwordOne,
-    } = this.state;
+    this.props.context.set.newUserInfo(this.state)
 
-    auth.doCreateUserWithEmailAndPassword(email, passwordOne)
-      .then(this.createParticipant)
-      .catch(this.updateError);
+    // auth.doCreateUserWithEmailAndPassword(email, passwordOne)
+    //   .then(this.createParticipant)
+    //   .catch(this.updateError);
 
   }
 
