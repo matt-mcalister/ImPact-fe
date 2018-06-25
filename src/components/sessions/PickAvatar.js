@@ -32,7 +32,8 @@ class PickAvatar extends React.Component {
     if (this.props.context.data.participant){
       console.log("update participant")
     } else {
-      this.props.context.set.createAuthUserAndParticipant()
+      await this.props.context.set.createAuthUserAndParticipant()
+      console.log("created AuthUserAndParticipant, inside PickAvatar")
     }
     //   .then(this.createParticipant)
   }

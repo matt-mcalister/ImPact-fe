@@ -8,16 +8,14 @@ import { firebase } from '../firebase';
 const withAuthorization = (Component) => {
   class authComponent extends React.Component {
     componentDidMount(){
-      firebase.auth.onAuthStateChanged(authUser => {
-        if (!authUser) {
-          console.log("no auth user")
-          this.props.history.push(routes.LANDING)
-        }
-      })
+      if (!this.props.context.data.participant) {
+        console.log("no participant")
+        this.props.history.push(routes.LANDING)
+      }
     }
 
     render(){
-        if (this.props.context.data.authUser) {
+        if (this.props.context.data.participant) {
           return <Component />
         } else {
           return null

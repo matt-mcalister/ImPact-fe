@@ -27,7 +27,7 @@ const DefaultLanding = () => {
 }
 
 const Landing = (props) => {
-  if (props.context.newUserInfo.name) {
+  if (props.context.newUserInfo.creatingUserParticipant) {
     return <PickAvatar />
   } else {
     return <DefaultLanding />
