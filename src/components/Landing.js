@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import * as routes from '../constants/routes';
 import PickAvatar from './sessions/PickAvatar'
 import AppConsumer from './context/AppConsumer';
+import withLoading from './withLoading'
 
 const DefaultLanding = () => {
   return (
@@ -36,18 +37,13 @@ const DefaultLanding = () => {
 
 
 class Landing extends React.Component {
-	shouldReroute(){
-    if (this.props.context.data.participant) {
-      this.props.history.push(routes.HOME)
+  state = {}
+
+	static getDerivedStateFromProps(props, state){
+    if (props.context.data.participant) {
+      props.history.push(routes.HOME)
     }
-  }
-
-  componentDidMount(){
-    this.shouldReroute()
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot){
-    this.shouldReroute()
+    return {...state}
   }
 
 
@@ -61,4 +57,4 @@ class Landing extends React.Component {
 }
 
 
-export default AppConsumer(withRouter(Landing));
+export default withLoading(AppConsumer(withRouter(Landing)));
