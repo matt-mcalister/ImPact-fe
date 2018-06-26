@@ -26,12 +26,39 @@ const DefaultLanding = () => {
   )
 }
 
-const Landing = (props) => {
-  if (props.context.newUserInfo.creatingUserParticipant) {
-    return <PickAvatar />
-  } else {
-    return <DefaultLanding />
+// const Landing = (props) => {
+//   if (props.context.newUserInfo.creatingUserParticipant) {
+//     return <PickAvatar />
+//   } else {
+//     return <DefaultLanding />
+//   }
+// }
+
+
+class Landing extends React.Component {
+	shouldReroute(){
+    if (this.props.context.data.participant) {
+      this.props.history.push(routes.HOME)
+    }
   }
+
+  componentDidMount(){
+    this.shouldReroute()
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot){
+    this.shouldReroute()
+  }
+
+
+	render(){
+    if (this.props.context.newUserInfo.creatingUserParticipant) {
+      return <PickAvatar />
+    } else {
+      return <DefaultLanding />
+    }
+	}
 }
 
-export default AppConsumer(Landing);
+
+export default AppConsumer(withRouter(Landing));
