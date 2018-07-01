@@ -1,0 +1,10 @@
+@media screen and (min-width:800px) and (min-height:530px) {
+  #capitalImg{
+    height: 100%;
+  }
+
+  #homePageContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,29 @@
+@media screen and (max-width:800px) {
+  #capitalImgContainer {
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  #capitalImg{
+    height: 100%;
+  }
+
+  #homePageContainer {
+    display: block;
+  }
+
+  #titleVideoGetApp {
+    width: 100vw;
+    margin-bottom: 10vmin;
+  }
+
+  .mainTitle {
+    font-size: 5em;
+  }
+
+  #about {
+    background-color: #2b5b87;
+    width: 90vw;
+    font-size: 3vw;
+  }
+}
