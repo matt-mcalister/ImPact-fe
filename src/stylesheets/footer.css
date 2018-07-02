@@ -1,0 +1,16 @@
+#footer {
+  /* position: relative; */
+  /* bottom: 0; */
+  width: 100vw;
+  background-color: #2b5b87;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer a {
+  margin-left: 3vw;
+  margin-right: 3vw;
+  color: white;
+  font-size: 2vh;
+}

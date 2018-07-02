@@ -1,8 +1,10 @@
 import React from "react"
 
+import Footer from "./Footer"
+
 const NewLanding = () => {
   return(
-    <div id="landingPage" style={{margin:"0",backgroundColor:"#2b5b87"}}>
+    <div id="landingPage" style={{margin:"0",backgroundColor:"#2b5b87", overflow:"scroll"}}>
       <div id="capitalImgContainer">
         <img id="capitalImg" src="/images/onboarding-extra-wide.png" alt="The US Capitol"/>
       </div>
@@ -21,6 +23,7 @@ const NewLanding = () => {
           <p>So, what’s the deal with the pact? You know those 30 day fitness apps?? Well this is like that, except no sweating. You get to set the terms of your pact--from 10 hours to infinity (show up your friends and make a 400,000 hour pact!)-- and then watch as activism becomes a stress-free part of your routine. Together, our time will add up. Let’s build a community of citizens where a little bit of time is always better than nothing, and a couple of dollars is always greater than zero. We can make an Impact- Together.</p>
           <p>2018 is going to be a historical year that could alter the course of American and world history for generations. In 20, 40, or 60 years, do you want to say you sat on the sidelines, or that you fought for what you knew was right?</p>
         </div>
+        <Footer />
       </div>
     </div>
   )

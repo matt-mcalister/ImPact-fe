@@ -5,7 +5,10 @@ import LaunchApp from './components/LaunchApp';
 import registerServiceWorker from './registerServiceWorker';
 
 // import './stylesheets/avatarSelection.css'
-// import './stylesheets/app.css'
+import './stylesheets/app.css'
+
+import './stylesheets/footer.css'
+
 import './stylesheets/landingpage/index.css'
 import './stylesheets/landingpage/desktop.css'
 import './stylesheets/landingpage/thin-wide.css'
