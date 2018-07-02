@@ -1,7 +1,14 @@
 import React from "react"
 
+import {
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom';
+
 import NewLanding from "./NewLanding"
 import ProtectedPage from "./ProtectedPage"
+import PrivacyPolicy from "./PrivacyPolicy"
+import TermsOfService from "./TermsOfService"
 
 class LaunchApp extends React.Component {
 	constructor(props){
@@ -28,7 +35,23 @@ class LaunchApp extends React.Component {
 
 	render(){
 		if (this.state.access){
-      return <NewLanding />
+      return (
+				<Router>
+					<div>
+						<Route
+						 path="/terms"
+							component={() => <TermsOfService />}
+						/>
+						<Route
+						 path="/privacy"
+							component={() => <PrivacyPolicy />}
+						/>
+						<Route
+						exact path="/"
+						component={() => <NewLanding />}
+						/>
+					</div>
+				</Router>)
     } else {
       return (
       <ProtectedPage
