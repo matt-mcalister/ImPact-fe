@@ -5,8 +5,13 @@
 
   #homePageContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50vw 50vw;
     grid-template-rows: 97vh 3vh
+  }
+
+  #aboutVideo {
+    width: 45vw;
+    height: 25.31vw;
   }
 
   #footer {

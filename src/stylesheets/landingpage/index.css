@@ -44,7 +44,8 @@
 }
 
 #capitalImg {
-  height: 100%;
+  min-height: 100vh;
+  min-width: 101vw;
 }
 
 #homePageContainer {
@@ -69,8 +70,8 @@
 }
 
 #aboutVideo {
-  width: 70.2vmin;
-  height: 40vmin;
+  width: 70vw;
+  height: 39.375vw;
 }
 
 #downloadApp {
@@ -87,7 +88,7 @@
 
 #about {
   color: white;
-  font-size: 1.3vw;
+  font-size: 1em;
   padding-left: 5vw;
   padding-right: 5vw;
   overflow: scroll;

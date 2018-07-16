@@ -12,7 +12,7 @@ const NewLanding = () => {
 
         <div id="titleVideoGetApp">
           <h1 className="mainTitle">ImPACT</h1>
-          <iframe title="ImPACT Video" id="aboutVideo" src="https://player.vimeo.com/video/276794240" frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen="true"></iframe>
+          <iframe title="ImPACT Video" id="aboutVideo" src="https://player.vimeo.com/video/278060639" frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen="true"></iframe>
           <div id="downloadApp">
             <img id="googlePlay" src="https://get.google.com/apptips/images/google-play.png" alt="Get it on Google Play"/>
             <img id="appStore" src="https://get.google.com/apptips/images/app-store.svg" alt="Download on the App Store"/>
