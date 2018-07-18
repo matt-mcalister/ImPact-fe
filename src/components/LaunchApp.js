@@ -5,6 +5,8 @@ import {
   Route
 } from 'react-router-dom';
 
+import { connect } from "react-redux"
+
 import NewLanding from "./NewLanding"
 import passwordProtectedPage from "./HOC/passwordProtectedPage"
 import PrivacyPolicy from "./PrivacyPolicy"
@@ -32,4 +34,4 @@ const LaunchApp = (props) => {
 }
 
 
-export default passwordProtectedPage(LaunchApp)
+export default passwordProtectedPage(connect(state => {return {...state}})(LaunchApp))

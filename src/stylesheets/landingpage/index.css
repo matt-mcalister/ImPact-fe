@@ -74,16 +74,40 @@
   height: 39.375vw;
 }
 
-#downloadApp {
+/* #downloadApp {
   display: flex;
   flex-direction: row;
   justify-content: center;
+} */
+
+#downloadApp {
+  margin-top: 1vmax;
+  display: grid;
+  grid-template-columns: 20vmax 20vmax;
+  grid-gap: 1vmax;
+  /* grid-template-rows: 20% 20%; */
+  /* border: 1px solid red; */
+}
+
+.signup-or-in {
+  background-color: #2b5b87;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3vmax;
+  font-size: 2vmax
+}
+
+#downloadApp a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
 }
 
 #downloadApp img {
-  width: 35%;
-  height: 35%;
-  margin: 2%;
+  width: 100%;
+  /* height: 100%; */
+  /* margin: 2%; */
 }
 
 #about {

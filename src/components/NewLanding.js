@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Link } from "react-router-dom"
 import Footer from "./Footer"
 
 const NewLanding = () => {
@@ -16,6 +16,8 @@ const NewLanding = () => {
           <div id="downloadApp">
             <img id="googlePlay" src="https://get.google.com/apptips/images/google-play.png" alt="Get it on Google Play"/>
             <img id="appStore" src="https://get.google.com/apptips/images/app-store.svg" alt="Download on the App Store"/>
+              <Link to="/signup"><div className="signup-or-in" id="signup-button">Sign Up</div></Link>
+              <Link to="/login"><div className="signup-or-in" id="login-button">Login</div></Link>
           </div>
         </div>
         <div id="about">
