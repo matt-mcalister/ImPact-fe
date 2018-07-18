@@ -86,10 +86,17 @@
   margin: 2%;
 }
 
-#about {
+.landing-text {
   color: white;
   font-size: 1em;
   padding-left: 5vw;
   padding-right: 5vw;
   overflow: scroll;
 }
+
+
+  #contact {
+    margin-top: 10vh;
+    text-align: center;
+    font-size: 4vh
+  }

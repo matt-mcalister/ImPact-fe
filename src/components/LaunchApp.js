@@ -6,10 +6,8 @@ import {
 } from 'react-router-dom';
 
 import NewLanding from "./NewLanding"
-import passwordProtectedPage from "./HOC/passwordProtectedPage"
 import PrivacyPolicy from "./PrivacyPolicy"
 import TermsOfService from "./TermsOfService"
-
 
 const LaunchApp = (props) => {
   return (
@@ -24,12 +22,16 @@ const LaunchApp = (props) => {
           component={() => <PrivacyPolicy />}
         />
         <Route
-        exact path="/"
-        component={() => <NewLanding />}
+          path="/contact"
+          component={() => <NewLanding contact={true} />}
+        />
+        <Route
+          exact path="/"
+          component={() => <NewLanding contact={false}/>}
         />
       </div>
     </Router>)
 }
 
 
-export default passwordProtectedPage(LaunchApp)
+export default LaunchApp
