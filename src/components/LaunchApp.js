@@ -8,7 +8,6 @@ import {
 import { connect } from "react-redux"
 
 import NewLanding from "./NewLanding"
-import passwordProtectedPage from "./HOC/passwordProtectedPage"
 import PrivacyPolicy from "./PrivacyPolicy"
 import TermsOfService from "./TermsOfService"
 
@@ -34,4 +33,4 @@ const LaunchApp = (props) => {
 }
 
 
-export default passwordProtectedPage(connect(state => {return {...state}})(LaunchApp))
+export default connect(state => {return {...state}})(LaunchApp)
