@@ -6,3 +6,7 @@
 .legal h1 {
   text-align: center;
 }
+
+body {
+  font: arial;
+}

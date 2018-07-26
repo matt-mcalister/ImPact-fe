@@ -29,11 +29,10 @@ const NewLanding = (props) => {
       <div id="homePageContainer">
 
       <div id="titleVideoGetApp">
-      <h1 className="mainTitle">ImPACT</h1>
+      <img className="mainTitle" src="/images/impact_official_white_large.png" alt="imPACT" />
       <iframe title="ImPACT Video" id="aboutVideo" src="https://player.vimeo.com/video/278060639" frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen="true"></iframe>
       <div id="downloadApp">
-      <img id="googlePlay" src="https://get.google.com/apptips/images/google-play.png" alt="Get it on Google Play"/>
-      <img id="appStore" src="https://get.google.com/apptips/images/app-store.svg" alt="Download on the App Store"/>
+      <a href="https://itunes.apple.com/us/app/my-impact/id1397266194?mt=8"><img id="appStore" src="https://get.google.com/apptips/images/app-store.svg" alt="Download on the App Store"/></a>
       </div>
       </div>
       {renderText(props)}
